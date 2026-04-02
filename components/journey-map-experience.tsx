@@ -480,9 +480,9 @@ export function JourneyMapExperience() {
 
     for (let index = 0; index < STOPS.length; index += 1) {
       const stop = STOPS[index];
+      await flyToAsync(map, stop, FLY_DURATION_MS);
       setActiveIndex(index);
       syncMapData(index);
-      await flyToAsync(map, stop, FLY_DURATION_MS);
 
       if (index < STOPS.length - 1) {
         await wait(DWELL_DURATION_MS);
