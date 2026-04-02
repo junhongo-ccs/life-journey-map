@@ -527,7 +527,7 @@ export function JourneyMapExperience() {
           className={`flex px-4 text-center transition-all duration-700 ${
             isPlaying || isFinished
               ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
-              : "pointer-events-auto absolute inset-x-0 bottom-[max(7rem,env(safe-area-inset-bottom))] z-10 flex-col items-center gap-4 px-4 sm:static sm:self-center sm:translate-y-0 sm:gap-5"
+              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:static sm:self-center sm:translate-y-0 sm:gap-5"
           }`}
         >
           <div
