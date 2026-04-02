@@ -15,7 +15,6 @@ type Stop = {
 const TOTAL_DURATION_MS = 120_000;
 const FLY_DURATION_MS = 8_000;
 const DWELL_DURATION_MS = 2_000;
-const FINAL_DWELL_MS = 8_000;
 const FINAL_ORBIT_MS = 24_000;
 const PITCH = 60;
 const ROUTE_SOURCE_ID = "journey-route";
@@ -490,7 +489,6 @@ export function JourneyMapExperience() {
       }
     }
 
-    await wait(FINAL_DWELL_MS);
     await orbitAroundStop(map, STOPS[STOPS.length - 1], FINAL_ORBIT_MS);
 
     setRemainingMs(0);
@@ -591,15 +589,6 @@ export function JourneyMapExperience() {
             <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/45">
               {MAPTILER_KEY ? "MapTiler style enabled" : "Fallback style enabled"}
             </p>
-          </div>
-        </div>
-
-        <div className="hidden self-end sm:block">
-          <div className="journey-panel rounded-[24px] border border-white/15 bg-surface px-4 py-3 text-right text-sm text-white/70 shadow-[0_18px_40px_rgba(0,0,0,0.22)]">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent-strong">
-              Ending
-            </p>
-            <p className="mt-2 font-serif text-xl text-white">最後は奥沢を 360° Orbit</p>
           </div>
         </div>
       </section>
