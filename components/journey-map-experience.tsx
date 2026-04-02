@@ -537,7 +537,7 @@ export function JourneyMapExperience() {
                 : "rounded-[24px] px-5 py-3 sm:rounded-full"
             }`}
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+            <p className="hidden text-xs uppercase tracking-[0.35em] text-white/60 sm:block">
               自己紹介サイト
             </p>
             <p
