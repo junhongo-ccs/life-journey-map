@@ -567,10 +567,8 @@ export function JourneyMapExperience() {
           </button>
 
           <div
-            className={`journey-panel pointer-events-auto rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
-              isPlaying || isFinished
-                ? "hidden sm:block sm:w-full"
-                : "w-[min(88vw,28rem)]"
+            className={`journey-panel pointer-events-auto hidden rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block ${
+              isPlaying || isFinished ? "sm:w-full" : "sm:w-[min(88vw,28rem)]"
             }`}
           >
             <div className="flex items-center justify-between text-sm text-white/80">
