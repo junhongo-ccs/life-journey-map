@@ -586,7 +586,7 @@ export function JourneyMapExperience() {
             <p className="mt-3 text-sm leading-6 text-muted">
               {isFinished
                 ? "奥沢に到着。いまの暮らしを包む景色を見渡して、旅はここでひと息つきます。"
-                : `大村から奥沢まで、${STOPS.length}つの拠点を順番に飛びながら現在地とエピソードを更新します。`}
+                : `大村から奥沢まで、${STOPS.length}の拠点を順番に飛びながら現在地とエピソードを更新します。`}
             </p>
             <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/45">
               {MAPTILER_KEY ? "MapTiler style enabled" : "Fallback style enabled"}
