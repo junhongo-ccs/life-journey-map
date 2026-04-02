@@ -534,7 +534,7 @@ export function JourneyMapExperience() {
             className={`journey-panel pointer-events-auto border border-white/15 bg-surface shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
               isPlaying || isFinished
                 ? "hidden rounded-[20px] px-4 py-3 text-left sm:block sm:rounded-[24px]"
-                : "rounded-[24px] px-5 py-3 sm:rounded-full"
+                : "hidden rounded-[24px] px-5 py-3 sm:block sm:rounded-full"
             }`}
           >
             <p className="hidden text-xs uppercase tracking-[0.35em] text-white/60 sm:block">
