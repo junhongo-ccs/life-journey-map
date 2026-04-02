@@ -503,38 +503,38 @@ export function JourneyMapExperience() {
       <div ref={mapContainerRef} className="journey-map" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,166,91,0.2),_transparent_32%),linear-gradient(180deg,rgba(4,11,17,0.2),rgba(4,11,17,0.68))]" />
 
-      <section className="pointer-events-none absolute inset-0 flex flex-col justify-between p-4 sm:p-6 lg:p-8">
-        <div className="journey-panel pointer-events-auto max-w-md rounded-[28px] border border-white/15 bg-surface px-5 py-5 text-sm text-muted shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:px-6">
+      <section className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-6 lg:p-8">
+        <div className="journey-panel pointer-events-auto max-w-[min(100%,26rem)] rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-sm text-muted shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:max-w-md sm:rounded-[28px] sm:px-6 sm:py-5">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-strong">
             移動ログ
           </p>
-          <h1 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
+          <h1 className="mt-2 text-2xl leading-tight text-foreground sm:mt-3 sm:text-4xl">
             引越し遍歴をめぐる 3D マップ
           </h1>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-white/55">
+          <p className="mt-3 text-[10px] leading-5 tracking-[0.18em] text-white/55 sm:mt-4 sm:text-[11px] sm:uppercase sm:tracking-[0.28em]">
             {ROUTE_LABEL}
           </p>
-          <div className="mt-5 rounded-2xl border border-white/10 bg-surface-strong px-4 py-4">
+          <div className="mt-4 rounded-2xl border border-white/10 bg-surface-strong px-4 py-4 sm:mt-5">
             <p className="text-xs uppercase tracking-[0.24em] text-accent-strong">
               現在地
             </p>
-            <p className="mt-2 text-2xl font-semibold text-white">{activeStop.label}</p>
-            <p className="mt-3 leading-7 text-muted">{activeStop.episode}</p>
+            <p className="mt-2 text-xl font-semibold text-white sm:text-2xl">{activeStop.label}</p>
+            <p className="mt-3 text-sm leading-6 text-muted sm:leading-7">{activeStop.episode}</p>
           </div>
         </div>
 
         <div
           className={`flex px-4 text-center transition-all duration-700 ${
             isPlaying || isFinished
-              ? "pointer-events-auto absolute top-4 right-4 z-10 w-[min(28rem,calc(100vw-2rem))] flex-col items-stretch gap-3 sm:top-6 sm:right-6 lg:top-8 lg:right-8"
-              : "flex-col items-center gap-5 self-center"
+              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-3 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] lg:top-8 lg:right-8"
+              : "flex-col items-center gap-4 self-center sm:gap-5"
           }`}
         >
           <div
             className={`journey-panel pointer-events-auto border border-white/15 bg-surface shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
               isPlaying || isFinished
-                ? "rounded-[24px] px-4 py-3 text-left"
-                : "rounded-full px-5 py-3"
+                ? "rounded-[20px] px-4 py-3 text-left sm:rounded-[24px]"
+                : "rounded-[24px] px-5 py-3 sm:rounded-full"
             }`}
           >
             <p className="text-xs uppercase tracking-[0.35em] text-white/60">
@@ -542,7 +542,7 @@ export function JourneyMapExperience() {
             </p>
             <p
               className={`mt-2 font-serif text-white transition-all duration-700 ${
-                isPlaying || isFinished ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl"
+                isPlaying || isFinished ? "text-lg sm:text-2xl" : "text-2xl sm:text-3xl"
               }`}
             >
               120 秒でたどる、人生の旅
@@ -559,8 +559,8 @@ export function JourneyMapExperience() {
             disabled={isPlaying}
             className={`pointer-events-auto rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
               isPlaying || isFinished
-                ? "w-full px-6 py-3 text-base"
-                : "min-w-64 px-8 py-4 text-lg"
+                ? "w-full px-5 py-3 text-base"
+                : "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:min-w-64 sm:px-8 sm:py-4 sm:text-lg"
             }`}
           >
             {isPlaying ? "移動中..." : "人生の旅をスタート"}
@@ -592,7 +592,7 @@ export function JourneyMapExperience() {
           </div>
         </div>
 
-        <div className="self-end">
+        <div className="hidden self-end sm:block">
           <div className="journey-panel rounded-[24px] border border-white/15 bg-surface px-4 py-3 text-right text-sm text-white/70 shadow-[0_18px_40px_rgba(0,0,0,0.22)]">
             <p className="text-xs uppercase tracking-[0.3em] text-accent-strong">
               Ending
