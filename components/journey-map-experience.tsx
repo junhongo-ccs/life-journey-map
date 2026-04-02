@@ -533,7 +533,7 @@ export function JourneyMapExperience() {
           <div
             className={`journey-panel pointer-events-auto border border-white/15 bg-surface shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
               isPlaying || isFinished
-                ? "rounded-[20px] px-4 py-3 text-left sm:rounded-[24px]"
+                ? "hidden rounded-[20px] px-4 py-3 text-left sm:block sm:rounded-[24px]"
                 : "rounded-[24px] px-5 py-3 sm:rounded-full"
             }`}
           >
@@ -558,12 +558,14 @@ export function JourneyMapExperience() {
             }}
             disabled={isPlaying}
             className={`pointer-events-auto rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
-              isPlaying || isFinished
-                ? "w-full px-5 py-3 text-base"
+              isPlaying
+                ? "hidden sm:block sm:w-full sm:px-5 sm:py-3 sm:text-base"
+                : isFinished
+                  ? "w-full px-5 py-3 text-base"
                 : "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:min-w-64 sm:px-8 sm:py-4 sm:text-lg"
             }`}
           >
-            {isPlaying ? "移動中..." : "人生の旅をスタート"}
+            {isFinished ? "もう一度、人生の旅をスタート" : "人生の旅をスタート"}
           </button>
 
           <div
