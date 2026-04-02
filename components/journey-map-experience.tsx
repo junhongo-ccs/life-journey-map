@@ -526,7 +526,7 @@ export function JourneyMapExperience() {
         <div
           className={`flex px-4 text-center transition-all duration-700 ${
             isPlaying || isFinished
-              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-3 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] lg:top-8 lg:right-8"
+              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
               : "flex-col items-center gap-4 self-center sm:gap-5"
           }`}
         >
@@ -568,7 +568,9 @@ export function JourneyMapExperience() {
 
           <div
             className={`journey-panel pointer-events-auto rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
-              isPlaying || isFinished ? "w-full" : "w-[min(88vw,28rem)]"
+              isPlaying || isFinished
+                ? "hidden sm:block sm:w-full"
+                : "w-[min(88vw,28rem)]"
             }`}
           >
             <div className="flex items-center justify-between text-sm text-white/80">
