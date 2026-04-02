@@ -525,14 +525,14 @@ export function JourneyMapExperience() {
 
         <div
           className={`flex px-4 text-center transition-all duration-700 ${
-            isPlaying || isFinished
+            isPlaying
               ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
               : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:static sm:self-center sm:translate-y-0 sm:gap-5"
           }`}
         >
           <div
             className={`journey-panel pointer-events-auto border border-white/15 bg-surface shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
-              isPlaying || isFinished
+              isPlaying
                 ? "hidden rounded-[20px] px-4 py-3 text-left sm:block sm:rounded-[24px]"
                 : "hidden rounded-[24px] px-5 py-3 sm:block sm:rounded-full"
             }`}
@@ -542,7 +542,7 @@ export function JourneyMapExperience() {
             </p>
             <p
               className={`mt-2 font-serif text-white transition-all duration-700 ${
-                isPlaying || isFinished ? "text-lg sm:text-2xl" : "text-2xl sm:text-3xl"
+                isPlaying ? "text-lg sm:text-2xl" : "text-2xl sm:text-3xl"
               }`}
             >
               120 秒でたどる、人生の旅
@@ -561,7 +561,7 @@ export function JourneyMapExperience() {
               isPlaying
                 ? "hidden sm:block sm:w-full sm:px-5 sm:py-3 sm:text-base"
                 : isFinished
-                  ? "w-full px-5 py-3 text-base"
+                  ? "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:w-full sm:min-w-0 sm:px-5 sm:text-base"
                 : "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:min-w-64 sm:px-8 sm:py-4 sm:text-lg"
             }`}
           >
@@ -570,7 +570,7 @@ export function JourneyMapExperience() {
 
           <div
             className={`journey-panel pointer-events-auto hidden rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block ${
-              isPlaying || isFinished ? "sm:w-full" : "sm:w-[min(88vw,28rem)]"
+              isPlaying ? "sm:w-full" : "sm:w-[min(88vw,28rem)]"
             }`}
           >
             <div className="flex items-center justify-between text-sm text-white/80">
