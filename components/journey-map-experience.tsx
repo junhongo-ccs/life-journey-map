@@ -555,7 +555,7 @@ export function JourneyMapExperience() {
               }
             }}
             disabled={isPlaying}
-            className={`pointer-events-auto rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
+            className={`pointer-events-auto cursor-pointer rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
               isPlaying
                 ? "hidden sm:block sm:w-full sm:px-5 sm:py-3 sm:text-base"
                 : isFinished
