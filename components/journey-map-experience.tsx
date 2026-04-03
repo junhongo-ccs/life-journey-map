@@ -517,19 +517,13 @@ export function JourneyMapExperience() {
         </div>
 
         <div
-          className={`journey-panel pointer-events-auto hidden border border-white/15 bg-surface px-5 py-3 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block sm:absolute sm:left-1/2 sm:z-10 sm:-translate-x-1/2 lg:px-6 ${
-            isPlaying
-              ? "sm:top-6 sm:min-w-[18rem] sm:rounded-[24px] lg:top-8"
-              : "sm:top-[min(34vh,16rem)] sm:min-w-[22rem] sm:rounded-full lg:top-[min(32vh,17rem)]"
-          }`}
+          className="journey-panel pointer-events-auto hidden border border-white/15 bg-surface px-5 py-3 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:absolute sm:right-6 sm:top-6 sm:z-10 sm:block sm:min-w-[22rem] sm:rounded-full lg:right-8 lg:top-8 lg:px-6"
         >
           <p className="hidden text-xs uppercase tracking-[0.35em] text-white/60 sm:block">
             自己紹介サイト
           </p>
           <p
-            className={`mt-2 font-serif text-white transition-all duration-700 ${
-              isPlaying ? "text-2xl" : "text-3xl"
-            }`}
+            className="mt-2 font-serif text-3xl text-white transition-all duration-700"
           >
             120 秒でたどる、人生の旅
           </p>
@@ -560,13 +554,7 @@ export function JourneyMapExperience() {
           </button>
         </div>
 
-        <div
-          className={`flex px-4 text-center transition-all duration-700 ${
-            isPlaying
-              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
-              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:items-stretch sm:gap-4 sm:px-0 lg:right-8 lg:bottom-8"
-          }`}
-        >
+        <div className="pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex flex-col items-center gap-4 px-4 text-center transition-all duration-700 sm:hidden">
           <button
             type="button"
             onClick={() => {
@@ -585,31 +573,27 @@ export function JourneyMapExperience() {
           >
             {isFinished ? "再びはじめる" : "人生の旅をスタート"}
           </button>
+        </div>
 
-          <div
-            className={`journey-panel pointer-events-auto hidden rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block ${
-              isPlaying ? "sm:w-full" : "sm:w-[min(88vw,28rem)]"
-            }`}
-          >
-            <div className="flex items-center justify-between text-sm text-white/80">
-              <span>旅の進行状況</span>
-              <span>{(remainingMs / 1000).toFixed(1)} 秒</span>
-            </div>
-            <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-[linear-gradient(90deg,#f5a65b,#fff1c7)] transition-[width] duration-300"
-                style={{ width: `${progressPercent}%` }}
-              />
-            </div>
-            <p className="mt-3 text-sm leading-6 text-muted">
-              {isFinished
-                ? "奥沢に到着。義母と家内、サビ猫二匹といまの暮らしを過ごしています"
-                : `生まれてから現在まで、${STOPS.length}の拠点を一気に飛びながらエピソードを更新します。`}
-            </p>
-            <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/45">
-              {MAPTILER_KEY ? "MapTiler style enabled" : "Fallback style enabled"}
-            </p>
+        <div className="journey-panel pointer-events-auto absolute right-6 bottom-6 z-10 hidden w-[min(28rem,calc(100vw-3rem))] rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block lg:right-8 lg:bottom-8">
+          <div className="flex items-center justify-between text-sm text-white/80">
+            <span>旅の進行状況</span>
+            <span>{(remainingMs / 1000).toFixed(1)} 秒</span>
           </div>
+          <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full bg-[linear-gradient(90deg,#f5a65b,#fff1c7)] transition-[width] duration-300"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          <p className="mt-3 text-sm leading-6 text-muted">
+            {isFinished
+              ? "奥沢に到着。義母と家内、サビ猫二匹といまの暮らしを過ごしています"
+              : `生まれてから現在まで、${STOPS.length}の拠点を一気に飛びながらエピソードを更新します。`}
+          </p>
+          <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/45">
+            {MAPTILER_KEY ? "MapTiler style enabled" : "Fallback style enabled"}
+          </p>
         </div>
       </section>
     </main>
