@@ -40,8 +40,7 @@ const STOPS: Stop[] = [
     coordinates: [132.1784, 34.1676],
     zoom: 17,
     bearing: 36,
-    episode:
-      "錦帯橋のそばでは泳げるきれいな川でした。米軍基地があったので初めて外国人を見ました。",
+    episode: "錦帯橋のそばでは泳げるきれいな川でした。米軍基地があったので初めて外国人を見ました。",
   },
   {
     id: "kashiwa",
@@ -66,8 +65,7 @@ const STOPS: Stop[] = [
     coordinates: [139.6277, 35.5317],
     zoom: 16.1,
     bearing: 122,
-    episode:
-      "日産スタジアムが徒歩圏（約２ｋｍ）。社会人開始。Macで教育テレビの下請けＣＧ制作。",
+    episode: "日産スタジアムが徒歩圏（約２ｋｍ）。社会人開始。Macで教育テレビの下請けＣＧ制作。",
   },
   {
     id: "toritsudaigaku",
@@ -503,18 +501,12 @@ export function JourneyMapExperience() {
 
       <section className="pointer-events-none absolute inset-0 flex flex-col p-3 sm:p-5 md:p-6 lg:p-8">
         <div className="journey-panel pointer-events-auto max-w-[min(100%,26rem)] rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-sm text-muted shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:max-w-md sm:rounded-[28px] sm:px-6 sm:py-5">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent-strong">
-            移動ログ
-          </p>
-          <h1 className="mt-2 text-2xl leading-tight text-foreground sm:mt-3 sm:text-4xl">
+          <h1 className="text-2xl leading-tight text-foreground sm:text-4xl">
             引越し遍歴をめぐる 3D マップ
           </h1>
-          <div className="mt-4 rounded-2xl border border-white/10 bg-surface-strong px-4 py-4 sm:mt-5">
-            <p className="text-xs uppercase tracking-[0.24em] text-accent-strong">
-              現在地
-            </p>
-            <p className="mt-2 text-xl font-semibold text-white sm:text-2xl">{activeStop.label}</p>
-            <p className="mt-3 text-sm leading-6 text-muted sm:leading-7">{activeStop.episode}</p>
+          <div className="mt-3 rounded-2xl border border-white/10 bg-surface-strong px-4 py-4 sm:mt-4">
+            <p className="text-xl font-semibold text-white sm:text-2xl">{activeStop.label}</p>
+            <p className="mt-2 text-sm leading-6 text-muted sm:leading-7">{activeStop.episode}</p>
           </div>
         </div>
 
