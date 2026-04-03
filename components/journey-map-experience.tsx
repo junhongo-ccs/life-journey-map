@@ -70,8 +70,8 @@ const STOPS: Stop[] = [
   {
     id: "toritsudaigaku",
     label: "目黒区　都立大学",
-    coordinates: [139.6766, 35.6175],
-    zoom: 16.2,
+    coordinates: [139.6763496801989, 35.61811570506961],
+    zoom: 17,
     bearing: 202,
     episode: "一人暮らしを始めた街で、この頃から社会人で、テレビのCG制作をしていました",
   },
