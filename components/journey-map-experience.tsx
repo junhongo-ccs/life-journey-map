@@ -28,23 +28,24 @@ const STYLE_URL = MAPTILER_KEY
 const STOPS: Stop[] = [
   {
     id: "omura",
-    label: "大村",
+    label: "長崎県大村市",
     coordinates: [129.95697943549348, 32.91737345245671],
-    zoom: 14.7,
+    zoom: 17,
     bearing: 22,
-    episode: "生まれてから小学校2年まで過ごしました",
+    episode: "生まれてから小学校2年まで過ごした家の場所（今は存在しません）",
   },
   {
     id: "iwakuni",
-    label: "岩国",
-    coordinates: [132.20626323733876, 34.13568728037211],
-    zoom: 14.9,
+    label: "山口県岩国市",
+    coordinates: [132.1784, 34.1676],
+    zoom: 17,
     bearing: 36,
-    episode: "米軍基地があったので初めて外国人の人を見たのを覚えています",
+    episode:
+      "錦帯橋のそばでは泳げるきれいな川でした。米軍基地があったので初めて外国人を見ました。",
   },
   {
     id: "kashiwa",
-    label: "柏市",
+    label: "千葉県柏市",
     coordinates: [140.0179, 35.8179],
     zoom: 13.9,
     bearing: 8,
@@ -52,7 +53,7 @@ const STOPS: Stop[] = [
   },
   {
     id: "zushi",
-    label: "逗子海岸",
+    label: "神奈川県逗子市",
     coordinates: [139.5714, 35.2925],
     zoom: 15.3,
     bearing: 144,
@@ -61,15 +62,16 @@ const STOPS: Stop[] = [
   },
   {
     id: "okurayama",
-    label: "大倉山駅",
+    label: "横浜市　大倉山",
     coordinates: [139.6277, 35.5317],
     zoom: 16.1,
     bearing: 122,
-    episode: "横浜のサッカースタジアムが徒歩圏で、Jリーグ観戦に行ったりしていました",
+    episode:
+      "日産スタジアムが徒歩圏（約２ｋｍ）。社会人開始。Macで教育テレビの下請けＣＧ制作。",
   },
   {
     id: "toritsudaigaku",
-    label: "都立大学駅",
+    label: "目黒区　都立大学",
     coordinates: [139.6766, 35.6175],
     zoom: 16.2,
     bearing: 202,
@@ -77,7 +79,7 @@ const STOPS: Stop[] = [
   },
   {
     id: "kyodo",
-    label: "経堂",
+    label: "世田谷区　経堂",
     coordinates: [139.636, 35.6515],
     zoom: 15.8,
     bearing: 287,
@@ -85,7 +87,7 @@ const STOPS: Stop[] = [
   },
   {
     id: "nishikoyama",
-    label: "西小山",
+    label: "品川区　西小山",
     coordinates: [139.6988, 35.6157],
     zoom: 16,
     bearing: 246,
@@ -93,7 +95,7 @@ const STOPS: Stop[] = [
   },
   {
     id: "ogikubo",
-    label: "荻窪",
+    label: "杉並区　荻窪",
     coordinates: [139.6202, 35.7049],
     zoom: 15.7,
     bearing: 18,
@@ -101,7 +103,7 @@ const STOPS: Stop[] = [
   },
   {
     id: "okusawa",
-    label: "奥沢",
+    label: "世田谷区　奥沢",
     coordinates: [139.6713, 35.6029],
     zoom: 18.2,
     bearing: 48,
