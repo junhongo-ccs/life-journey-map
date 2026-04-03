@@ -29,7 +29,7 @@ const STOPS: Stop[] = [
   {
     id: "omura",
     label: "大村",
-    coordinates: [129.9591, 32.9214],
+    coordinates: [129.95697943549348, 32.91737345245671],
     zoom: 14.7,
     bearing: 22,
     episode: "生まれてから小学校2年まで過ごしました",
@@ -37,7 +37,7 @@ const STOPS: Stop[] = [
   {
     id: "iwakuni",
     label: "岩国",
-    coordinates: [132.1784, 34.1676],
+    coordinates: [132.20626323733876, 34.13568728037211],
     zoom: 14.9,
     bearing: 36,
     episode: "米軍基地があったので初めて外国人の人を見たのを覚えています",
