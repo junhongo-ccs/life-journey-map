@@ -517,31 +517,29 @@ export function JourneyMapExperience() {
         </div>
 
         <div
-          className={`flex px-4 text-center transition-all duration-700 ${
+          className={`journey-panel pointer-events-auto hidden border border-white/15 bg-surface px-5 py-3 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 sm:block sm:absolute sm:left-1/2 sm:z-10 sm:-translate-x-1/2 lg:px-6 ${
             isPlaying
-              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
-              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:bottom-6 sm:gap-5 sm:px-6 lg:bottom-8"
+              ? "sm:top-6 sm:min-w-[18rem] sm:rounded-[24px] lg:top-8"
+              : "sm:top-[min(34vh,16rem)] sm:min-w-[22rem] sm:rounded-full lg:top-[min(32vh,17rem)]"
           }`}
         >
-          <div
-            className={`journey-panel pointer-events-auto border border-white/15 bg-surface shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-700 ${
-              isPlaying
-                ? "hidden rounded-[20px] px-4 py-3 text-left sm:block sm:rounded-[24px]"
-                : "hidden rounded-[24px] px-5 py-3 sm:block sm:rounded-full"
+          <p className="hidden text-xs uppercase tracking-[0.35em] text-white/60 sm:block">
+            自己紹介サイト
+          </p>
+          <p
+            className={`mt-2 font-serif text-white transition-all duration-700 ${
+              isPlaying ? "text-2xl" : "text-3xl"
             }`}
           >
-            <p className="hidden text-xs uppercase tracking-[0.35em] text-white/60 sm:block">
-              自己紹介サイト
-            </p>
-            <p
-              className={`mt-2 font-serif text-white transition-all duration-700 ${
-                isPlaying ? "text-lg sm:text-2xl" : "text-2xl sm:text-3xl"
-              }`}
-            >
-              120 秒でたどる、人生の旅
-            </p>
-          </div>
+            120 秒でたどる、人生の旅
+          </p>
+        </div>
 
+        <div
+          className={`pointer-events-none absolute inset-x-0 z-10 hidden justify-center px-6 sm:flex ${
+            isPlaying ? "bottom-6 lg:bottom-8" : "bottom-6 lg:bottom-8"
+          }`}
+        >
           <button
             type="button"
             onClick={() => {
@@ -552,13 +550,40 @@ export function JourneyMapExperience() {
             disabled={isPlaying}
             className={`pointer-events-auto cursor-pointer rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
               isPlaying
-                ? "hidden sm:block sm:w-full sm:px-5 sm:py-3 sm:text-base"
+                ? "hidden"
                 : isFinished
-                  ? "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:w-full sm:min-w-0 sm:px-5 sm:text-base"
-                : "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:min-w-64 sm:px-8 sm:py-4 sm:text-lg"
+                  ? "min-w-[16rem] px-8 py-3 text-base"
+                  : "min-w-[16rem] px-8 py-4 text-lg"
             }`}
           >
-            {isFinished ? "もう一度、人生の旅をスタート" : "人生の旅をスタート"}
+            {isFinished ? "再びはじめる" : "人生の旅をスタート"}
+          </button>
+        </div>
+
+        <div
+          className={`flex px-4 text-center transition-all duration-700 ${
+            isPlaying
+              ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
+              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:items-stretch sm:gap-4 sm:px-0 lg:right-8 lg:bottom-8"
+          }`}
+        >
+          <button
+            type="button"
+            onClick={() => {
+              if (!isPlaying) {
+                void runJourney();
+              }
+            }}
+            disabled={isPlaying}
+            className={`pointer-events-auto cursor-pointer rounded-full border border-white/20 bg-[linear-gradient(135deg,#f5a65b,#ffd08b)] font-semibold text-[#102030] shadow-[0_18px_55px_rgba(245,166,91,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_65px_rgba(245,166,91,0.46)] disabled:cursor-not-allowed disabled:opacity-70 ${
+              isPlaying
+                ? "hidden"
+                : isFinished
+                  ? "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:hidden"
+                : "min-w-[min(78vw,16rem)] px-6 py-3 text-base sm:hidden"
+            }`}
+          >
+            {isFinished ? "再びはじめる" : "人生の旅をスタート"}
           </button>
 
           <div
