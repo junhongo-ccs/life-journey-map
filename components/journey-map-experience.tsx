@@ -110,8 +110,6 @@ const STOPS: Stop[] = [
   },
 ];
 
-const ROUTE_LABEL = STOPS.map((stop) => stop.label).join(" → ");
-
 const INITIAL_VIEW = {
   center: [137.15, 35.3] as [number, number],
   zoom: 4.55,
@@ -497,11 +495,11 @@ export function JourneyMapExperience() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
+    <main className="relative min-h-screen min-h-[100svh] overflow-hidden bg-background text-foreground">
       <div ref={mapContainerRef} className="journey-map" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,166,91,0.2),_transparent_32%),linear-gradient(180deg,rgba(4,11,17,0.2),rgba(4,11,17,0.68))]" />
 
-      <section className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-6 lg:p-8">
+      <section className="pointer-events-none absolute inset-0 flex flex-col p-3 sm:p-5 md:p-6 lg:p-8">
         <div className="journey-panel pointer-events-auto max-w-[min(100%,26rem)] rounded-[24px] border border-white/15 bg-surface px-4 py-4 text-sm text-muted shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:max-w-md sm:rounded-[28px] sm:px-6 sm:py-5">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-strong">
             移動ログ
@@ -509,9 +507,6 @@ export function JourneyMapExperience() {
           <h1 className="mt-2 text-2xl leading-tight text-foreground sm:mt-3 sm:text-4xl">
             引越し遍歴をめぐる 3D マップ
           </h1>
-          <p className="mt-3 text-[10px] leading-5 tracking-[0.18em] text-white/55 sm:mt-4 sm:text-[11px] sm:uppercase sm:tracking-[0.28em]">
-            {ROUTE_LABEL}
-          </p>
           <div className="mt-4 rounded-2xl border border-white/10 bg-surface-strong px-4 py-4 sm:mt-5">
             <p className="text-xs uppercase tracking-[0.24em] text-accent-strong">
               現在地
@@ -525,7 +520,7 @@ export function JourneyMapExperience() {
           className={`flex px-4 text-center transition-all duration-700 ${
             isPlaying
               ? "pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex-col items-stretch gap-2 sm:inset-x-auto sm:bottom-auto sm:top-6 sm:right-6 sm:w-[min(28rem,calc(100vw-3rem))] sm:gap-3 lg:top-8 lg:right-8"
-              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:static sm:self-center sm:translate-y-0 sm:gap-5"
+              : "pointer-events-auto absolute inset-x-0 bottom-[max(11rem,calc(env(safe-area-inset-bottom)+4rem))] z-10 flex-col items-center gap-4 px-4 sm:bottom-6 sm:gap-5 sm:px-6 lg:bottom-8"
           }`}
         >
           <div
